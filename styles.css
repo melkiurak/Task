@@ -1,0 +1,146 @@
+html, body{
+    height: 100%;
+}
+body{
+    background-color: #F5F5F5;
+}
+li{
+    list-style-type: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.wrapper{
+    min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+main{
+    flex: 1 1 auto;
+    display: flex;
+    gap: 20px;
+}
+
+/*---------------------------------HEADER------------------------------------------------------------------------------------*/
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .logo{
+        margin-right: 15px;
+    }
+    .header-action{
+        display: flex;
+        flex: 1;
+        padding:10px;
+        border-radius: 30px;
+        background-color: white;
+        .search {
+            flex: 1;
+            position: relative;
+            margin-right: 30px;
+            input{
+                width: 100%;
+                border-radius: 25px;
+                border: 1px solid gray;
+                outline: none;
+                padding: 10px 10px;
+            }
+            button{
+                position: absolute;
+                right: 0;
+                top: 11px;
+                background-color: rgb(255, 255, 255, 0.1);
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+        .user {
+            button{
+                padding: 10px 10px;
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+                span{
+                    margin-right: 10px;
+                }
+            }
+            button:hover{
+                transition: all 0.3s; 
+                background-color: rgb(177, 175, 175);
+            }
+        }
+    }
+}
+/*------------------SIDEBAR-----------------------------------------------------------------------------------------------------------------------*/
+.sidebar{
+    background-color: white;
+    border-radius: 20px;
+    .sidebar__list{
+        padding: 0 30px;        
+        li{
+            padding-bottom: 30px;
+            color: #5C5C5C;
+            .icons{
+                margin-right: 15px;
+            }
+        }
+    }
+}
+/*--------------------------------------------------------------------------------------------------------------TASK-------------------------------------------------------------------------------------------*/
+.task-container{
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+}
+.task-addition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .add-task{
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid #F4F4F4;
+        margin: 10px;
+        cursor: pointer;
+        padding: 8px;
+        .icons{
+            font-size: 16px;
+            color: #1F9486;
+        }
+    }
+}
+.task-input{
+    flex: 1;
+    position: relative;
+    margin: 10px;
+    input{
+        width: 100%;
+        padding: 10px 30px;
+        border-radius:10px;
+        border: none;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;  
+    }
+    button{
+        position: absolute;
+        top: 9px;
+        left: 3px;
+        background-color: rgb(255, 255, 255, 0.1);
+        border: none;
+        .icons{
+            color: #C8C8C8;
+            font-size: 15px;
+        }
+    }
+}
+.Calendar{
+    flex: 1;
+}
+.AddTask{
+    display: none;
+}

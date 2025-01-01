@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <h1>Logo</h1>
+            </div>
+           <div class="header-action">
+                <div class="search">
+                        <input type="text" placeholder="search">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="user">
+                        <button>
+                            <span>Регестрация</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </button>
+                        <button>
+                            <span>Войти</span>
+                            <i class="fa-solid fa-key"></i>
+                        </button>
+                </div>
+           </div>
+        </header>
+        <main>
+            <div class="sidebar">
+                <ul class="sidebar__list">
+                    <li><i class="fa-solid fa-house icons"></i><a href="">Dashboard</a></li>
+                    <li><i class="fa-solid fa-circle-check icons"></i><a href="">List</a></li>
+                    <li><i class="fa-regular fa-calendar icons"></i><a href="">Calendar</a></li>
+                </ul>
+            </div>
+            <div class="task-container">git
+                <div class="task-addition">
+                    <div class="task-input">
+                        <button><i class="fa-solid fa-circle-plus icons"></i></button>
+                        <input type="text" class="task-input-field" id="taskInput" placeholder="Add task for today">
+                    </div>
+                    <button class="add-task" onclick="addTask()"><i class="fa-solid fa-circle-play icons"></i></button>
+                </div>
+            </div>
+            <div>
+                <h1>Task</h1>
+                <ul id="taskList"></ul>
+            </div>
+            <div class="Calendar">
+                <h1>da</h1>
+            </div>
+        </main>
+        <footer class="footer">
+           <div><h1>fsa</h1></div>
+        </footer>
+    </div>
+    <script src="./task.js"></script>
+</body
+</html>
