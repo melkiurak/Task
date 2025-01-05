@@ -18,17 +18,27 @@ const showTask = () => {
     actions.forEach((action, index) => {
         const task = document.createElement('li');
         const time = document.createElement('span');
-        const buttonDelete = document.createElement('button');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = action.completed;
+
         task.innerHTML = action.task;
         time.innerHTML = action.time;
-        buttonDelete.innerHTML = 'Удалить';
-        buttonDelete.onclick = () => deleteTask(index);
+
+        checkbox.onchange  = () => deleteTask(index);
+        
+        if(checkbox.checked){
+            deleteTask(index);
+        } else {
+            console.log('Задача не выполнена');
+        }
+    
         list.appendChild(task);
         list.appendChild(time);
-        list.appendChild(buttonDelete);
+        list.appendChild(checkbox);
     });
 }
-function deleteTask(index) {
+function acceptTask(index) {
     actions.splice(index, 1);
     localStorage.setItem('actions', JSON.stringify(actions));
     showTask();
