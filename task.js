@@ -1,7 +1,7 @@
 const list = document.getElementById('taskList');
 let actions = JSON.parse(localStorage.getItem('actions')) || [];
 const time = document.getElementById('inputTime');
-
+const input = document.getElementById('taskInput');
 function addTask(){
     time.style.display = 'block';
     if(time.value == ''){
@@ -10,28 +10,35 @@ function addTask(){
         const inputData = document.getElementById('taskInput').value;
         actions.push({task:inputData, time:time.value});
         localStorage.setItem('actions', JSON.stringify(actions));
+        input.value = '';
+        time.value = '';
+        time.style.display = 'none';
         showTask();
     }
 }
 const showTask = () => {
+    actions.sort((a, b) => {
+        return a.time.localeCompare(b.time);
+    });
     list.innerHTML = '';
+
     actions.forEach((action, index) => {
         const container = document.createElement('div');
         container.classList.add('taskContainer');
         const task = document.createElement('li');
         const time = document.createElement('span');
         const checkbox = document.createElement('input');
+
         checkbox.type = 'checkbox';
         checkbox.checked = action.completed;
 
-        
         task.innerHTML = action.task;
         time.innerHTML = action.time;
 
-        checkbox.onchange  = () => deleteTask(index);
+        checkbox.onchange  = () => acceptTask(index);
         
         if(checkbox.checked){
-            deleteTask(index);
+            acceptTask(index);
         } else {
             console.log('Задача не выполнена');
         }
