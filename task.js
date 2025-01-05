@@ -16,12 +16,15 @@ function addTask(){
 const showTask = () => {
     list.innerHTML = '';
     actions.forEach((action, index) => {
+        const container = document.createElement('div');
+        container.classList.add('taskContainer');
         const task = document.createElement('li');
         const time = document.createElement('span');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = action.completed;
 
+        
         task.innerHTML = action.task;
         time.innerHTML = action.time;
 
@@ -32,10 +35,10 @@ const showTask = () => {
         } else {
             console.log('Задача не выполнена');
         }
-    
-        list.appendChild(task);
-        list.appendChild(time);
-        list.appendChild(checkbox);
+        list.appendChild(container);
+        container.appendChild(checkbox);
+        container.appendChild(task);
+        container.appendChild(time);
     });
 }
 function acceptTask(index) {

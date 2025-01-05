@@ -21,7 +21,9 @@ main{
     display: flex;
     gap: 20px;
 }
-
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}   
 /*---------------------------------HEADER------------------------------------------------------------------------------------*/
 .header {
     width: 100%;
@@ -80,6 +82,7 @@ main{
 .sidebar{
     background-color: white;
     border-radius: 20px;
+    margin-top: 20px;
     .sidebar__list{
         padding: 0 30px;        
         li{
@@ -94,13 +97,15 @@ main{
 /*--------------------------------------------------------------------------------------------------------------TASK-------------------------------------------------------------------------------------------*/
 .task-container{
     flex: 1;
-    background-color: white;
-    border-radius: 20px;
 }
 .task-addition{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+
     .add-task{
         border-radius: 100px;
         background-color: white;
@@ -113,6 +118,9 @@ main{
             color: #1F9486;
         }
     }
+}
+.task{
+    margin-top: 15px;
 }
 .task-input{
     flex: 1;
@@ -138,6 +146,23 @@ main{
         }
     }
 }
+.taskList{
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: white;
+}
+.taskContainer{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 10px;
+    border-bottom: 2px solid #F5F5F5; 
+        li{
+            flex: 1;
+        }
+    }
+
 .Calendar{
     flex: 1;
 }
