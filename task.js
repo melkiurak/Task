@@ -2,10 +2,14 @@ const list = document.getElementById('taskList');
 let actions = JSON.parse(localStorage.getItem('actions')) || [];
 const time = document.getElementById('inputTime');
 const input = document.getElementById('taskInput');
+const error = document.getElementById('errorMessage');
 function addTask(){
     time.style.display = 'block';
     if(time.value == ''){
         console.log('Пажалуйста выберите время');
+    }else if(input.value.trim() == ''){
+        error.style.display = 'block';
+        console.log('Пажалуйста введите задачу');
     } else { 
         const inputData = document.getElementById('taskInput').value;
         actions.push({task:inputData, time:time.value});
@@ -13,10 +17,12 @@ function addTask(){
         input.value = '';
         time.value = '';
         time.style.display = 'none';
+        error.style.display = 'none';
         showTask();
     }
 }
 const showTask = () => {
+
     actions.sort((a, b) => {
         return a.time.localeCompare(b.time);
     });
@@ -53,4 +59,5 @@ function acceptTask(index) {
     localStorage.setItem('actions', JSON.stringify(actions));
     showTask();
 };
+
 showTask();
